@@ -1,0 +1,19 @@
+# Plan de pago con disco: conserva clientes, outfits y prendas nuevas. Para probar gratis, cambia plan a "free" y quita el bloque disk
+# (en el plan gratis los datos se reinician cada vez que el servicio se duerme o se reinicia).
+services:
+  - type: web
+    name: atelier-inventario
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/salud
+    disk:
+      name: datos
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: MOSTRAR_CODIGO
+        value: "1"

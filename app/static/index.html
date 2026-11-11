@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Atelier · Inventario inteligente de ropa</title>
+<link rel="stylesheet" href="/assets/css/estilos.css">
+</head><body>
+
+<section id="login" hidden>
+ <div class="hero"><h1>Tu clóset,<br>con inteligencia de color.</h1>
+  <div class="bands"><i style="flex:5;background:#2f3e5a"></i><i style="flex:3;background:#d9b99b"></i><i style="flex:2;background:#b4532a"></i></div>
+  <p>Inventario con altas y bajas, recomendaciones de outfits y un probador con cámara que califica tu combinación.</p></div>
+ <div class="panel"><div class="box">
+
+  <form id="form-login" autocomplete="on"><h2>Iniciar sesión</h2><p class="sub">Entra con tu correo y contraseña</p>
+   <label for="login-correo">Correo</label><input id="login-correo" type="email" autocomplete="username" maxlength="120" required>
+   <label for="login-clave">Contraseña</label><div class="pw"><input id="login-clave" type="password" autocomplete="current-password" maxlength="128" required><button type="button" id="ver-clave" aria-label="Mostrar contraseña">Ver</button></div>
+   <p class="err" id="error-login" role="alert"></p><button class="btn">Entrar</button>
+   <div style="text-align:center"><button type="button" class="link" id="ir-olvide">¿Olvidaste tu contraseña?</button></div>
+   <div class="sep">¿Eres nuevo?</div><button type="button" class="btn ghost" id="ir-registro">Crear cuenta</button></form>
+
+  <form id="form-registro" hidden><h2>Crear cuenta</h2><p class="sub">Regístrate como cliente</p>
+   <label for="registro-nombre">Nombre</label><input id="registro-nombre" autocomplete="name" minlength="2" maxlength="80" required>
+   <label for="registro-correo">Correo</label><input id="registro-correo" type="email" autocomplete="email" maxlength="120" required>
+   <label for="registro-clave">Contraseña</label><div class="pw"><input id="registro-clave" type="password" autocomplete="new-password" minlength="8" maxlength="128" required><button type="button" id="ver-clave-registro" aria-label="Mostrar contraseña">Ver</button></div>
+   <p class="nota">Mínimo 8 caracteres, con letras y números.</p>
+   <label for="registro-clave2">Confirmar contraseña</label><input id="registro-clave2" type="password" autocomplete="new-password" maxlength="128" required>
+   <p class="err" id="error-registro" role="alert"></p><button class="btn">Crear cuenta</button>
+   <div style="text-align:center"><button type="button" class="link" data-volver>← Ya tengo cuenta</button></div></form>
+
+  <form id="form-olvide" hidden><h2>Recuperar acceso</h2><p class="sub" id="olvide-subtitulo">Escribe tu correo y te generamos un código de 6 dígitos.</p>
+   <div id="olvide-paso1"><label for="olvide-correo">Correo</label><input id="olvide-correo" type="email" maxlength="120" required><button class="btn" style="margin-top:.8rem">Enviar código</button></div>
+   <div id="olvide-paso2" hidden><label for="olvide-codigo">Código de 6 dígitos</label><input id="olvide-codigo" inputmode="numeric" maxlength="6" pattern="\d{6}">
+    <label for="olvide-nueva">Nueva contraseña (mín. 8, con letras y números)</label><input id="olvide-nueva" type="password" minlength="8" maxlength="128" autocomplete="new-password">
+    <button class="btn" style="margin-top:.8rem">Cambiar contraseña</button></div>
+   <p class="err" id="error-olvide" role="alert"></p><div style="text-align:center"><button type="button" class="link" data-volver>← Volver a iniciar sesión</button></div></form>
+
+ </div></div>
+</section>
+
+<div id="shell" hidden><nav id="nav"></nav><main id="main"></main></div>
+<dialog id="dlg"></dialog>
+
+<script src="/assets/js/app.js"></script>
+</body></html>
